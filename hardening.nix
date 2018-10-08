@@ -112,7 +112,8 @@ in
     # Setting the number of allowed user namespaces to 0 effectively disables
     # the feature at runtime.  Attempting to create a user namespace
     # with unshare will then fail with "no space left on device".
-    boot.kernel.sysctl."user.max_user_namespaces" = mkDefault 0;
+    # incompatible with nix.useSandbox = true (default as of nixos-18.09) see https://github.com/NixOS/nix/issues/1915
+    #boot.kernel.sysctl."user.max_user_namespaces" = mkDefault 1;
 
     # Raise ASLR entropy for 64bit & 32bit, respectively.
     #
