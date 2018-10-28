@@ -5,5 +5,6 @@
     ./hostapd.nix
     # ./iptools.nix
     ./network-ipv6-fixes.nix
+    ./caches.nix
   ];
 }
